@@ -1,14 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-
 class DashboardPostController extends Controller
 {
     /**
@@ -22,7 +18,6 @@ class DashboardPostController extends Controller
             'posts' => Post::where('user_id', auth()->user()->id)->get()
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +29,6 @@ class DashboardPostController extends Controller
             'categories' => Category::all()
         ]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -47,17 +41,20 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
+
+        if($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('post-images');
+        }
 
         $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validateData);
-
         return redirect('/dashboard/posts')->with('success', 'New Post has been added');
     }
-
     /**
      * Display the specified resource.
      *
@@ -70,7 +67,6 @@ class DashboardPostController extends Controller
             'post' => $post
         ]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -84,7 +80,6 @@ class DashboardPostController extends Controller
             'categories' => Category::all()
         ]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -99,21 +94,16 @@ class DashboardPostController extends Controller
             'category_id' => 'required',
             'body' => 'required'
         ];
-
         if($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:posts';
         }
-
         $validateData = $request->validate($rules);
         $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
-
         Post::where('id', $post->id)
                 ->update($validateData);
-
         return redirect('/dashboard/posts')->with('success', 'New Post has been updated!');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -123,10 +113,8 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id);
-
         return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');
     }
-
     public function checkSlug(Request $request) {
         $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
