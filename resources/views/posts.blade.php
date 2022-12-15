@@ -38,7 +38,7 @@
                 @foreach ($posts->skip(1) as $post)
                     <div class="col-md-4 mb-3">
                         <div class="card">
-                            <div class="position-absolute px-3 py-2"><a href="/posts?category={{ $post->category->slug }}" class=" text-decoration-none">{{ $post->category->name }}</a></div>
+                            <div class="position-absolute px-3 py-2"><a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></div>
                             <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
                             <div class="card-body">
                             <h5 class="card-title"><a href="/post/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a></h5>
