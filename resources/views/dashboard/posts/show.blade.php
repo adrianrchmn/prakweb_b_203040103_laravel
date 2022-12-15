@@ -2,8 +2,8 @@
     @section('container')
     <div class="container">
         <div class="row my-3">
-            <div class="col-md-8">
-
+            <div class="col-md-8 bg-light">
+                
                 <h1 class="mb-3">{{ $post->title }}</h1>
 
                 <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to all my posts</a>
@@ -14,18 +14,14 @@
                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span>Delete</button>
                 </form>
 
-                {{-- @if ($post->image)
+                @if ($post->image)
                 <div style="max-height: 350px; overflow:hidden;">
-                    <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
+                    <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
                 </div>
                 @else
                     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
-                @endif --}}
-                @if ($post->image)
-                    <div class="" style="max-height: 350px; overflow:hidden;">
-                        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
-                    </div>
                 @endif
+
                 <article class="my-3 fs-5">
                     {!! $post->body !!}
                 </article>
