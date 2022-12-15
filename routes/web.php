@@ -35,6 +35,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index']);
+// single post
 Route::get('post/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function() {
