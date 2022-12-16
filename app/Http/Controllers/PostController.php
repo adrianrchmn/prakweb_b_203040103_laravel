@@ -9,6 +9,7 @@ use App\Models\User;
 
 class PostController extends Controller
 {
+
     public function index() {
         $title = '';
         if(request('category')) {
@@ -28,8 +29,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function show(Post $post)
-    {
+    public function show(Post $post) {
         return view('post', [
             "title" => "Single Post",
             "active" => "posts",

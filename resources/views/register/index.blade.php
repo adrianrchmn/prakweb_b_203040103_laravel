@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-5">
             <main class="form-registration">
-                <h1 class="h3 mt-5 mb-4 fw-normal text-center ">Registration Form</h1>
+                <h1 class="h3 mt-5 mb-4 fw-normal text-center">Registration Form</h1>
                 <form action="/register" method="post">
                     @csrf
                     <div class="form-floating">
@@ -45,10 +45,10 @@
                     </div>
                     <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
                 </form>
-                <small class="d-block text-center mt-3 ">Already Registered? <a class="text-decoration-none" href="/login">Login</a></small>
+                <small class="d-block text-center mt-3">Already Registered? <a class="text-decoration-none" href="/login">Login</a></small>
             </main>
         </div>
     </div>
-
+    
 
 @endsection

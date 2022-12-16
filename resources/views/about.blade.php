@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
 @extends('layouts.main')
+    @section('container')
 
-@section('container')
-    <div class="container mb-5 text-center">
+        <div class="container mb-5">
             <div class="row">
-                <div class="col">
+                <div class="col text-center mt-5">
                     <div class="card mb-5">
-                        <div class="position-relative px-3 py-2" style="background-color: rgba(255, 255, 255, 0.2)">
-                            <h1 >Halaman About</h1>
-                            <h3 >{{ $name }}</h3>
+                        <div class="position-relative px-3 py-2">
+                            <h1 class="">Halaman About</h1>
+                            <h3 class="">{{ $name }}</h3>
+                            <p class="">{{ $email }}</p>
                             <img src="img/{{ $image }}" alt="{{ $name }}" width="200" class="img-thumbnail rounded-circle">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-@endsection
+    @endsection
+    

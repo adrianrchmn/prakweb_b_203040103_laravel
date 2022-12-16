@@ -1,1 +1,1 @@
-alert("Hello Gaes");
+alert("Helo AGS!");

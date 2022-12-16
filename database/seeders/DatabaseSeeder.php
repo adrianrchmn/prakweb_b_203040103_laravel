@@ -16,78 +16,68 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        
 
-        User::create([
+        User::Create([
             'name' => 'Adrian Rachman',
             'username' => 'adrianRachman',
             'email' => '203040103@mail.unpas.ac.id',
             'password' => bcrypt('12345')
         ]);
 
-        // User::create([
-        //     'name' => 'Indra',
-        //     'email' => 'indra123@gmail.com',
-        //     'password' => bcrypt('54321')
-        // ]);
-
         User::factory(3)->create();
 
-        Category::create([
+        Category::Create([
             'name' => 'Web Programming',
             'slug' => 'web-programming'
         ]);
-
-        Category::create([
+        
+        Category::Create([
             'name' => 'Web Design',
             'slug' => 'web-design'
         ]);
 
-        Category::create([
+        Category::Create([
             'name' => 'Personal',
             'slug' => 'personal'
         ]);
 
         Post::factory(20)->create();
 
-        // Post::create([
+        // Post::Create([
         //     'title' => 'Judul Pertama',
         //     'slug' => 'judul-pertama',
-        //     'excerpt' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi.',
-        //     'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi. Nam illo magni beatae, obcaecati animi porro ex et exercitationem, cumque amet, nobis voluptatibus voluptates iste sequi totam culpa blanditiis quasi laborum nesciunt non eaque. Illo saepe veniam laudantium aliquid! Itaque exercitationem fugit quae officiis nam iste fugiat ullam perspiciatis corrupti omnis facilis doloremque quod nisi obcaecati, tempore eius enim ratione aliquam provident corporis error ex adipisci voluptatem? Et tempore temporibus magni porro eaque culpa maxime optio sunt reprehenderit, perspiciatis voluptatem eius laudantium. Dolorum omnis voluptas, dicta quo, nulla ex temporibus quia impedit, assumenda exercitationem similique provident molestiae aliquam?',
+        //     'excerpt' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati quam harum omnis maxime fugiat natus dicta! Vel aliquam voluptatibus, animi assumenda accusantium magnam nesciunt? Explicabo sapiente suscipit incidunt quisquam expedita?',
+        //     'body'=> '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem dolor ex tempore officia at ab. Tenetur eaque at corrupti odit? Nobis ratione, iste quaerat aspernatur ea nam in rerum nulla reiciendis ut aperiam odio quod ducimus similique iure sequi aliquam adipisci placeat at hic eaque.</p><p> Praesentium sunt odio placeat earum. Soluta impedit eligendi, assumenda sequi consectetur est consequuntur illum eum nobis voluptas amet natus.</p><p> Aliquid sed, facilis eaque architecto et repellendus quisquam ab possimus assumenda laborum explicabo officia perferendis itaque. Perspiciatis voluptate corrupti eveniet similique reprehenderit quod expedita facilis excepturi! Quam delectus repudiandae magni blanditiis maiores consequatur, ab corporis.</p>',
         //     'category_id' => 1,
         //     'user_id' => 1
         // ]);
-
-        // Post::create([
-        //     'title' => 'Judul ke Dua',
+        
+        // Post::Create([
+        //     'title' => 'Judul ke dua',
         //     'slug' => 'judul-ke-dua',
-        //     'excerpt' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi.',
-        //     'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi. Nam illo magni beatae, obcaecati animi porro ex et exercitationem, cumque amet, nobis voluptatibus voluptates iste sequi totam culpa blanditiis quasi laborum nesciunt non eaque. Illo saepe veniam laudantium aliquid! Itaque exercitationem fugit quae officiis nam iste fugiat ullam perspiciatis corrupti omnis facilis doloremque quod nisi obcaecati, tempore eius enim ratione aliquam provident corporis error ex adipisci voluptatem? Et tempore temporibus magni porro eaque culpa maxime optio sunt reprehenderit, perspiciatis voluptatem eius laudantium. Dolorum omnis voluptas, dicta quo, nulla ex temporibus quia impedit, assumenda exercitationem similique provident molestiae aliquam?',
+        //     'excerpt' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati quam harum omnis maxime fugiat natus dicta! Vel aliquam voluptatibus, animi assumenda accusantium magnam nesciunt? Explicabo sapiente suscipit incidunt quisquam expedita?',
+        //     'body'=> '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem dolor ex tempore officia at ab. Tenetur eaque at corrupti odit? Nobis ratione, iste quaerat aspernatur ea nam in rerum nulla reiciendis ut aperiam odio quod ducimus similique iure sequi aliquam adipisci placeat at hic eaque.</p><p> Praesentium sunt odio placeat earum. Soluta impedit eligendi, assumenda sequi consectetur est consequuntur illum eum nobis voluptas amet natus.</p><p> Aliquid sed, facilis eaque architecto et repellendus quisquam ab possimus assumenda laborum explicabo officia perferendis itaque. Perspiciatis voluptate corrupti eveniet similique reprehenderit quod expedita facilis excepturi! Quam delectus repudiandae magni blanditiis maiores consequatur, ab corporis.</p>',
         //     'category_id' => 1,
         //     'user_id' => 1
         // ]);
 
-        // Post::create([
-        //     'title' => 'Judul ke Tiga',
+        // Post::Create([
+        //     'title' => 'Judul ke tiga',
         //     'slug' => 'judul-ke-tiga',
-        //     'excerpt' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi.',
-        //     'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi. Nam illo magni beatae, obcaecati animi porro ex et exercitationem, cumque amet, nobis voluptatibus voluptates iste sequi totam culpa blanditiis quasi laborum nesciunt non eaque. Illo saepe veniam laudantium aliquid! Itaque exercitationem fugit quae officiis nam iste fugiat ullam perspiciatis corrupti omnis facilis doloremque quod nisi obcaecati, tempore eius enim ratione aliquam provident corporis error ex adipisci voluptatem? Et tempore temporibus magni porro eaque culpa maxime optio sunt reprehenderit, perspiciatis voluptatem eius laudantium. Dolorum omnis voluptas, dicta quo, nulla ex temporibus quia impedit, assumenda exercitationem similique provident molestiae aliquam?',
+        //     'excerpt' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati quam harum omnis maxime fugiat natus dicta! Vel aliquam voluptatibus, animi assumenda accusantium magnam nesciunt? Explicabo sapiente suscipit incidunt quisquam expedita?',
+        //     'body'=> '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem dolor ex tempore officia at ab. Tenetur eaque at corrupti odit? Nobis ratione, iste quaerat aspernatur ea nam in rerum nulla reiciendis ut aperiam odio quod ducimus similique iure sequi aliquam adipisci placeat at hic eaque.</p><p> Praesentium sunt odio placeat earum. Soluta impedit eligendi, assumenda sequi consectetur est consequuntur illum eum nobis voluptas amet natus.</p><p> Aliquid sed, facilis eaque architecto et repellendus quisquam ab possimus assumenda laborum explicabo officia perferendis itaque. Perspiciatis voluptate corrupti eveniet similique reprehenderit quod expedita facilis excepturi! Quam delectus repudiandae magni blanditiis maiores consequatur, ab corporis.</p>',
         //     'category_id' => 2,
         //     'user_id' => 1
         // ]);
 
-        // Post::create([
+        // Post::Create([
         //     'title' => 'Judul ke Empat',
         //     'slug' => 'judul-ke-empat',
-        //     'excerpt' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi.',
-        //     'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ducimus quasi. Nam illo magni beatae, obcaecati animi porro ex et exercitationem, cumque amet, nobis voluptatibus voluptates iste sequi totam culpa blanditiis quasi laborum nesciunt non eaque. Illo saepe veniam laudantium aliquid! Itaque exercitationem fugit quae officiis nam iste fugiat ullam perspiciatis corrupti omnis facilis doloremque quod nisi obcaecati, tempore eius enim ratione aliquam provident corporis error ex adipisci voluptatem? Et tempore temporibus magni porro eaque culpa maxime optio sunt reprehenderit, perspiciatis voluptatem eius laudantium. Dolorum omnis voluptas, dicta quo, nulla ex temporibus quia impedit, assumenda exercitationem similique provident molestiae aliquam?',
+        //     'excerpt' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati quam harum omnis maxime fugiat natus dicta! Vel aliquam voluptatibus, animi assumenda accusantium magnam nesciunt? Explicabo sapiente suscipit incidunt quisquam expedita?',
+        //     'body'=> '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem dolor ex tempore officia at ab. Tenetur eaque at corrupti odit? Nobis ratione, iste quaerat aspernatur ea nam in rerum nulla reiciendis ut aperiam odio quod ducimus similique iure sequi aliquam adipisci placeat at hic eaque.</p><p> Praesentium sunt odio placeat earum. Soluta impedit eligendi, assumenda sequi consectetur est consequuntur illum eum nobis voluptas amet natus.</p><p> Aliquid sed, facilis eaque architecto et repellendus quisquam ab possimus assumenda laborum explicabo officia perferendis itaque. Perspiciatis voluptate corrupti eveniet similique reprehenderit quod expedita facilis excepturi! Quam delectus repudiandae magni blanditiis maiores consequatur, ab corporis.</p>',
         //     'category_id' => 2,
         //     'user_id' => 2
         // ]);
-
     }
 }

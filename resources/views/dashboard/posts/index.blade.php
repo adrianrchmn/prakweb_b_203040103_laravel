@@ -5,22 +5,21 @@
             <h1 class="h2">My Posts</h1>
         </div>
 
-
         @if (session()->has('success'))
-        <div class="alert alert-success col-lg-8" role="alert">
+          <div class="alert alert-success col-lg-8" role="alert">
             {{ session('success') }}
           </div>
         @endif
 
         <div class="table-responsive col-lg-8">
-            <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post</a>
-            <table class="table table-striped table-sm">
+          <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post</a>
+            <table class="table table-striped table-sm bg-light rounded-20">
               <thead>
                 <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Action</th>
+                  <th scope="col" class="text-dark">No</th>
+                  <th scope="col" class="text-dark">Title</th>
+                  <th scope="col" class="text-dark">Category</th>
+                  <th scope="col" class="text-dark">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,5 +42,5 @@
               </tbody>
             </table>
           </div>
-
+    
     @endsection
